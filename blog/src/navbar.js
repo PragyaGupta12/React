@@ -1,6 +1,6 @@
 const Navbar = () => {
     const handleClick=()=>{
-        console.log("logged")
+        alert("logged")
     }
     return (
         <nav className="navbar">
@@ -8,7 +8,9 @@ const Navbar = () => {
             <div className="links">
                 <a href="/">Home</a>
                 <a href="/create">New Blog</a>
-                <button onClick={handleClick}>Login</button>  {/*here we are not invoking the func on click because it will run the func even before we click on the button} */}
+                <button onClick={handleClick}>Login</button>  {/*here we are not invoking the func on click 
+                because it will run the func even before we click on the button, so instead we set a reference 
+                to that func */}
             </div>
         </nav>
     );
