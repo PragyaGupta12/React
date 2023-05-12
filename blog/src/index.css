@@ -60,7 +60,13 @@ body{
   color: #f1356d;
   margin-bottom: 8px;
 }
-#del-btn{
+.blog-preview button{
   float: right;
-  margin-bottom: 8px;
+  margin-left: 16px;
+  text-decoration: none;
+  padding: 6px;
+  /* background-color: #f1356d; */
+  border-radius: 6px;
+  color: white;
+  border-style: none;
 }
