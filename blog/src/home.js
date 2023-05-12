@@ -11,9 +11,13 @@ const Home = () => {
         {title: 'React tricks', body: 'lorem ipsum...', author: 'Mario', id: 4 }
         ]
         )
+    const handleDelete = (id)=>{
+
+        }
     return (
         <div className="home">
-           <BlogList blogs = { blogs } title="All Blogs!"/>
+           <BlogList blogs = { blogs } title="All Blogs!" handleDelete={handleDelete}/>
+           {/* inside  BlogList we have created the props so that we can use them in different components as well*/}
            {/* <BlogList blogs = { blogs.filter((blogval)=> blogval.author === 'Mario') } title="Mario's Blogs!"/> */}
         </div>
     );
