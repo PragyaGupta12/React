@@ -15,6 +15,9 @@ const Home = () => {
         const newBlog = blogs.filter(x => x.id !== id);//if the id we are on is not equal to the id the blog is pointing at then this logic will send true
         setBlogs(newBlog);
     }
+    useEffect(()=>{
+        console.log("hello from use effect")
+    })
     return (
         <div className="home">
             <BlogList blogs={blogs} title="All Blogs!" handleDelete={handleDelete} />
