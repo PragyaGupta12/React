@@ -16,18 +16,22 @@ const Home = () => {
     //     const newBlog = blogs.filter(x => x.id !== id);//if the id we are on is not equal to the id the blog is pointing at then this logic will send true
     //     setBlogs(newBlog);
     // };
+    const [isLoading, setisLoading] = useState(true);
 
     useEffect(()=>{
         fetch("http://localhost:8000/blogs")//this link here has the resource i.e the blogs in the json file
-        .then(res =>{
+        .then((res) =>{
             return res.json()
         })
-        .then(data => {setBlogs(data)
+        .then((data) => {
+            setBlogs(data);
+            setisLoading(false);
         })
     },[]);
 
     return (
         <div className="home">
+            {isLoading && <div>It's not you, it's me. Loading...</div> }
             {blogs && <BlogList blogs={blogs} title="All Blogs!" /* handleDelete={handleDelete} */ />}
             {/* we have written && because when the fetch() takes time to get the data the web app throws error
             so we have used a logical AND, this makes sure that the bloglist part runs only if blogs is true and 
